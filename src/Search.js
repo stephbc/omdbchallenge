@@ -10,7 +10,7 @@ export const Search = () => {
       alert("please enter valid movie title")
     } else {
       try {
-        await fetch(`http://www.omdbapi.com/?s=${text}&apikey=51fbba34`)
+        await fetch(`https://www.omdbapi.com/?s=${text}&apikey=51fbba34`)
         .then(response => response.json())
         .then(data => setMovies(data.Search));
         setText("")
