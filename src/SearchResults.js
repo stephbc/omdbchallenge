@@ -5,11 +5,7 @@ export const SearchResults = props => {
 
   const addNominees = movie => {
     if(noms.length < 5) {
-      if(!noms.includes(movie)){
-        setNoms([...noms, movie])
-      } else {
-        alert("Already added this title!")
-      }
+      setNoms([...noms, movie])
     } else {
       alert("Reached max 5 nominees!")
     }
@@ -25,14 +21,17 @@ export const SearchResults = props => {
         Search results:
         {props.movies.map(movie => (
           <div key={movie.imdbID}>
-            <button onClick={()=> addNominees(movie)}>add</button>
+            <button
+              onClick={()=> addNominees(movie)}
+              disabled={noms.includes(movie)}
+            >add</button>
             {movie.Title} ({movie.Year})
           </div>
         ))}
       </div>
 
       <div className="nominees">
-        Your 5 Nominees:
+        Your Nominees:
         {noms.map(nom => (
           <div key={nom.imdbID}>
             {nom.Title} ({nom.Year})
