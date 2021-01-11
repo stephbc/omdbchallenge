@@ -7,7 +7,13 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  font-size: 15;
+  /* font-size: calc(10px + 2vmin); */
+  color: white;
+}
+
+a {
+  font-weight: bolder;
   color: white;
 }
 
@@ -21,17 +27,29 @@
   flex-direction: row;
   color: #282c34;
   justify-content: space-between;
-  padding: 50px;
+  padding: 25px;
 }
 
 .results {
+  background-color: whitesmoke;
+  flex: 1 0;
   text-align: left;
+  padding: 25px;
 }
 
 .nominees {
+  background-color: whitesmoke;
+  flex: 1 0;
   text-align: right;
+  padding: 25px;
 }
 
 button {
   margin: 10px
+}
+
+input {
+  width: 50%;
+  height: 30px;
+  border-radius: 3px;
 }

@@ -18,24 +18,24 @@ export const SearchResults = props => {
   return (
     <div className="Movie-Lists">
       <div className="results">
-        Search results:
+        <h4>SEARCH RESULTS</h4>
         {props.movies.map(movie => (
           <div key={movie.imdbID}>
             <button
               onClick={()=> addNominees(movie)}
               disabled={noms.includes(movie)}
-            >add</button>
+            >+</button>
             {movie.Title} ({movie.Year})
           </div>
         ))}
       </div>
 
       <div className="nominees">
-        Your Nominees:
+        <h4>YOUR NOMINEES</h4>
         {noms.map(nom => (
           <div key={nom.imdbID}>
             {nom.Title} ({nom.Year})
-            <button onClick={() => removeNoms(nom)}>remove</button>
+            <button onClick={() => removeNoms(nom)}>-</button>
           </div>
         ))}
       </div>

@@ -10,7 +10,7 @@ export const Search = () => {
       alert("please enter valid movie title")
     } else {
       try {
-        await fetch(`https://www.omdbapi.com/?s=${text}&apikey=51fbba34`)
+        await fetch(`https://www.omdbapi.com/?s=${text}&type=movie&apikey=51fbba34`)
         .then(response => response.json())
         .then(data => setMovies(data.Search));
         setText("")
@@ -32,7 +32,7 @@ export const Search = () => {
         <div className="Search-Bar">
           <input
             type="text"
-            placeholder="next title"
+            placeholder="NEXT TITLE"
             value={text}
             onChange={(event) => setText(event.target.value)}
             onKeyDown={evt => handleKey(evt)}
@@ -48,7 +48,7 @@ export const Search = () => {
         <div className="Search-Bar">
           <input
             type="text"
-            placeholder="search by title"
+            placeholder="SEARCH BY TITLE"
             value={text}
             onChange={(event) => setText(event.target.value)}
             onKeyDown={evt => handleKey(evt)}
